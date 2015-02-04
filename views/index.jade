@@ -1,0 +1,11 @@
+extends layout
+
+block scripts
+
+block content
+	#content
+
+	script.
+		var FC_MAP = FC_MAP || {};
+
+	script(data-main='/scripts/map', src='/scripts/vendor/require.js')
