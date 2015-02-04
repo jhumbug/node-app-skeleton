@@ -6,7 +6,7 @@ var cookieParser    = require('cookie-parser');
 var bodyParser      = require('body-parser');
 
 // load JARVIS configuraton json
-var Config = require('./config/map');
+var Config = require('./config/_default');
 
 
 
@@ -31,8 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // routes files
 app.use('/', require('./routes/index'));
-app.use('/earth', require('./routes/earth'));
-app.use('/callers', require('./routes/callers'));
+app.use('/_default', require('./routes/_default'));
 
 
 // catch 404 and forward to error handler
