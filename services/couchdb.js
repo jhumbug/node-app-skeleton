@@ -1,5 +1,5 @@
 var app = require('../app');
-var Config = require('../config/map');
+var Config = require('../config/_default');
 var cradle = require('cradle');
 
 var environment = process.env.ENVIRONMENT || 'development';

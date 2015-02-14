@@ -13,7 +13,7 @@ proxyOptions.route = '/_default';
 module.exports = {
     browserSync: {
         server: {
-            middleware: [proxy(proxyOptions)],
+            // middleware: [proxy(proxyOptions)],
             // Serve up our build folder
             baseDir: dest
         }
@@ -32,6 +32,12 @@ module.exports = {
     images: {
         src: app + "/images/**",
         dest: dest + "/images"
+    },
+    vendor: {
+        src: [
+            '/node_modules/modernizr/dist/modernizr-build.js'
+        ],
+        dest: dest + '/js/'
     },
     fonts: {
         src: [

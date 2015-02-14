@@ -12,6 +12,20 @@
 
 
 
+    // "AuthConfig": {
+    //     "ldap": {
+    //         "host": "ldap.turner.com",
+    //         "port": 389,
+    //         "searchBase": "DC=turner,DC=com",
+    //         "searchFilter": "(sAMAccountName={{username}})",
+    //         "userPrefix": "TURNER\\",
+    //         "adminGroupDn": "CN=*AdultSwim Dot Com Dev (TBS),OU=Groups,OU=Messaging,OU=North America,DC=turner,DC=com",
+    //         "dotcomGroupDn": "CN=*Adultswim Dot Com (TBS),OU=Groups,OU=Messaging,OU=North America,DC=turner,DC=com"
+    //     }
+    // },
+
+
+
 
     "DatabaseConfig": {
         "staging": {
