@@ -19,6 +19,7 @@ var config       = require('../config').browserify;
 var _            = require('lodash');
 
 var browserifyTask = function(callback, devMode) {
+  console.log('asldkjf');
 
   var bundleQueue = config.bundleConfigs.length;
 

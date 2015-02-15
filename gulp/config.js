@@ -1,4 +1,4 @@
-var dest = "./_build";
+var dest = "./public";
 var app = './app';
 var node_modules = './node_modules';
 
@@ -16,6 +16,16 @@ module.exports = {
             // middleware: [proxy(proxyOptions)],
             // Serve up our build folder
             baseDir: dest
+        },
+        port: 3001,
+        open: false
+    },
+    nodemon: {
+        options: {
+            script: './bin/www',
+            ext: 'html js jade',
+            ignore: ['./public/**/*', './app/**/*', './gulp/**/*', './node_modules/**/*'],
+            nodeArgs: ['--debug']
         }
     },
     less: {
@@ -35,9 +45,9 @@ module.exports = {
     },
     vendor: {
         src: [
-            '/node_modules/modernizr/dist/modernizr-build.js'
+            node_modules + '/modernizr/dist/modernizr-build.js'
         ],
-        dest: dest + '/js/'
+        dest: dest + '/js/vendor'
     },
     fonts: {
         src: [

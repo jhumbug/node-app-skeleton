@@ -6,7 +6,7 @@ var open = require('gulp-open');
  
 gulp.task('open', ['less', 'images', 'fonts', 'markup', 'watch'], function(){
   var options = {
-    url: 'http://localhost:3000'
+    url: 'http://localhost:3001'
   };
   gulp.src('')
   .pipe(open('', options));
