@@ -22,10 +22,14 @@ module.exports = {
     },
     nodemon: {
         options: {
+            "verbose": true,
             script: './bin/www',
             ext: 'html js jade',
-            ignore: ['./public/**/*', './app/**/*', './gulp/**/*', './node_modules/**/*'],
-            nodeArgs: ['--debug']
+            ignore: [".git", 'public', 'app', 'gulp', 'node_modules'],
+            nodeArgs: ['--debug'],
+            "watch": [
+                "views/"
+              ]
         }
     },
     less: {

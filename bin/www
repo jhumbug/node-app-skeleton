@@ -1,9 +1,22 @@
 #!/usr/bin/env node
+var dest = "./public";
 var debug = require('debug')('_default');
+var browserSync = require('browser-sync');
 var app = require('../app');
 
 app.set('port', process.env.PORT || 3000);
 
 var server = app.listen(app.get('port'), function() {
+	browserSync({
+	    // server: {
+     //        // middleware: [proxy(proxyOptions)],
+     //        // Serve up our build folder
+     //        baseDir: dest
+     //    },
+     	proxy: "localhost:3000",
+     	// open: false,
+        port: server.address().port,
+    	files: ['public/**/*.{js,css}']
+	 });
   debug('Express server listening on port ' + server.address().port);
 });
