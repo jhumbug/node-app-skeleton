@@ -5,20 +5,10 @@ var node_modules = './node_modules';
 var ftpConfig = require('./.ftppass');
 
 module.exports = {
-    // browserSync: {
-    //     server: {
-    //         // middleware: [proxy(proxyOptions)],
-    //         // Serve up our build folder
-    //         baseDir: dest
-    //     },
-    //     port: 3001,
-    //     open: false
-    // },
     nodemon: {
         options: {
             "verbose": true,
             script: './bin/www',
-            // ext: 'html js jade',
             ignore: [".git", 'public', 'ui', 'node_modules', 'gulp']
         }
     },
@@ -49,10 +39,6 @@ module.exports = {
             node_modules + '/font-awesome/fonts/**'
         ],
         dest: dest + "/fonts"
-    },
-    markup: {
-        src: app + "/index.html",
-        dest: dest
     },
     browserify: {
         // A separate bundle will be generated for each

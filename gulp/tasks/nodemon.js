@@ -1,10 +1,7 @@
 var gulp = require('gulp'),
     nodemon = require('gulp-nodemon'),
-    config = require('../config');
-
-
-var browserifyTask = require('./browserify')
-// var browserSync = require('browser-sync');
+    config = require('../config'),
+	browserifyTask = require('./browserify');
 
 
 gulp.task('nodemon', function(cb) {
@@ -19,33 +16,18 @@ gulp.task('nodemon', function(cb) {
 
                 gulp.watch(config.less.watchSrc, ['less']);
                 gulp.watch(config.images.src, ['images']);
-                gulp.watch(config.markup.src, ['markup']);
+                gulp.watch(config.vendor.src, ['vendors']);
+                gulp.watch(config.fonts.src, ['fonts']);
 
                 browserifyTask(function() {}, true);
 
-
-                // browserSync(config.browserSync);
-             
                 cb();
-                
+
             }
             called = true;
             console.log('started');
         })
         .on('restart', function onRestart() {
-            console.log('restart11');
-            // Also reload the browsers after a slight delay
-            // setTimeout(function reload() {
-            //   	browserSync.reload({
-            //   		stream: false
-            //   	});
-            // }, 500);
+            console.log('restart');
         });
-
-    // nodemon(config.options)
-    //     .on('change', ['build'])
-    //     .on('start', ['build', 'watch'])
-    //     .on('restart', function() {
-    //         console.log('restarted!')
-    //     })
 })
