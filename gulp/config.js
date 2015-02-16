@@ -1,35 +1,25 @@
 var dest = "./public";
-var app = './app';
+var app = './ui';
 var node_modules = './node_modules';
-
-var url = require('url');
-var proxy = require('proxy-middleware');
 
 var ftpConfig = require('./.ftppass');
 
-var proxyOptions = url.parse('http://www.adultswim.com/_default');
-proxyOptions.route = '/_default';
-
 module.exports = {
-    browserSync: {
-        server: {
-            // middleware: [proxy(proxyOptions)],
-            // Serve up our build folder
-            baseDir: dest
-        },
-        port: 3001,
-        open: false
-    },
+    // browserSync: {
+    //     server: {
+    //         // middleware: [proxy(proxyOptions)],
+    //         // Serve up our build folder
+    //         baseDir: dest
+    //     },
+    //     port: 3001,
+    //     open: false
+    // },
     nodemon: {
         options: {
             "verbose": true,
             script: './bin/www',
-            ext: 'html js jade',
-            ignore: [".git", 'public', 'app', 'gulp', 'node_modules'],
-            nodeArgs: ['--debug'],
-            "watch": [
-                "views/"
-              ]
+            // ext: 'html js jade',
+            ignore: [".git", 'public', 'ui', 'node_modules', 'gulp']
         }
     },
     less: {
