@@ -4,6 +4,8 @@ var favicon         = require('serve-favicon');
 var logger          = require('morgan');
 var cookieParser    = require('cookie-parser');
 var bodyParser      = require('body-parser');
+var debug = require('debug')('_default');
+var browserSync = require('browser-sync');
 
 // load JARVIS configuraton json
 var Config = require('./config/_default');
@@ -65,6 +67,37 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+
+
+
+// USE THIS IF YOU NEED TO PROXY A URL
+// var url = require('url');
+// var proxy = require('proxy-middleware');
+// var proxyOptions = url.parse('http://www.adultswim.com/_default');
+// proxyOptions.route = '/_default';
+
+app.set('port', process.env.PORT || 3000);
+
+
+var server = app.listen(app.get('port'), function() {
+    browserSync({
+        // USE THIS IF YOU NEED TO PROXY A URL
+        // server: {
+        //        // middleware: [proxy(proxyOptions)],
+        //        // Serve up our build folder
+        //        baseDir: dest
+        //    },
+        proxy: "localhost:3000",
+        // open: false,
+        port: server.address().port,
+        files: ['public/**/*']
+    });
+
+    debug('Express server listening on port ' + server.address().port);
+});
+
+
 
 
 module.exports = app;

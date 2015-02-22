@@ -8,7 +8,7 @@ module.exports = {
     nodemon: {
         options: {
             "verbose": true,
-            script: './bin/www',
+            script: './app',
             ignore: [".git", 'public', 'ui', 'node_modules', 'gulp']
         }
     },
