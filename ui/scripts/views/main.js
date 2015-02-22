@@ -4,6 +4,16 @@ Backbone.$ = $;
 
 var key = require('keymaster');
 
+// pick what tests you need 
+// require('browsernizr/test/css/rgba');
+// require('browsernizr/test/file/filesystem');
+// require('browsernizr/test/websockets');
+ 
+// make sure to do this _after_ importing the tests 
+window.modernizr = require('browsernizr');
+// or if you need access to the modernizr instance: 
+// var Modernizr = require('browsernizr');
+
 var _defaultView = require('../views/_default');
 var _defaultModel = require('../models/_default');
 
