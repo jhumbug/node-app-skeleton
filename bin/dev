@@ -21,7 +21,7 @@ var server = app.listen(app.get('port'), function() {
 	    //        baseDir: dest
 	    //    },
      	proxy: "localhost:3000",
-     	// open: false,
+     	open: false,
         port: server.address().port,
     	files: ['public/**/*']
 	});

@@ -4,4 +4,3 @@ Deploys using ftp or sftp
 Has keymaster and font awesome
 
 # to do
-fix opening new browser windows when saving server files

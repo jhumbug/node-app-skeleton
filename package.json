@@ -54,7 +54,6 @@
     "gulp-less": "^2.0.1",
     "gulp-minify-css": "^0.3.11",
     "gulp-notify": "^1.4.2",
-    "gulp-open": "^0.3.2",
     "gulp-plumber": "^0.6.6",
     "gulp-sftp": "^0.1.4",
     "gulp-sourcemaps": "^1.2.8",
@@ -66,7 +65,8 @@
     "require-dir": "^0.1.0",
     "vinyl-source-stream": "~0.1.1",
     "watchify": "^2.2.1",
-    "gulp-nodemon": "~1.0.5"
+    "gulp-nodemon": "~1.0.5",
+    "open": "0.0.5"
   },
   "dependencies": {
     "async": "^0.9.0",

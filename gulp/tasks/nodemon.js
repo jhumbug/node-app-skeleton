@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     nodemon = require('gulp-nodemon'),
     config = require('../config'),
-	browserifyTask = require('./browserify');
+	browserifyTask = require('./browserify'),
+	open = require("open");
 
 
 gulp.task('nodemon', function(cb) {
@@ -13,7 +14,6 @@ gulp.task('nodemon', function(cb) {
         })
         .on('start', function onStart() {
             if (!called) {
-
                 gulp.watch(config.less.watchSrc, ['less']);
                 gulp.watch(config.images.src, ['images']);
                 gulp.watch(config.vendor.src, ['vendors']);
@@ -22,6 +22,8 @@ gulp.task('nodemon', function(cb) {
                 browserifyTask(function() {}, true);
 
                 cb();
+            	
+				open("http://localhost:3001");
 
             }
             called = true;
