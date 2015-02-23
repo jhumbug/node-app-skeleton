@@ -10,7 +10,7 @@ var key = require('keymaster');
 // require('browsernizr/test/websockets');
  
 // make sure to do this _after_ importing the tests 
-window.modernizr = require('browsernizr');
+modernizr = require('browsernizr');
 // or if you need access to the modernizr instance: 
 // var Modernizr = require('browsernizr');
 

@@ -4,3 +4,4 @@ Deploys using ftp or sftp
 Has keymaster and font awesome
 
 # to do
+auto broswer refresh after server file changes

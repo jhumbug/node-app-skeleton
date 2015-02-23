@@ -16,15 +16,13 @@ gulp.task('nodemon', function(cb) {
             if (!called) {
                 gulp.watch(config.less.watchSrc, ['less']);
                 gulp.watch(config.images.src, ['images']);
-                gulp.watch(config.vendor.src, ['vendors']);
                 gulp.watch(config.fonts.src, ['fonts']);
 
                 browserifyTask(function() {}, true);
 
                 cb();
             	
-				open("http://localhost:3001");
-
+				open(config.open.url);
             }
             called = true;
         })

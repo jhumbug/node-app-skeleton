@@ -4,13 +4,33 @@ var node_modules = './node_modules';
 
 var ftpConfig = require('./.ftppass');
 
+// USE THIS IF YOU NEED TO PROXY A URL
+// var url = require('url');
+// var proxy = require('proxy-middleware');
+// var proxyOptions = url.parse('http://www.adultswim.com/_default');
+// proxyOptions.route = '/_default';
+
 module.exports = {
+    browserSync: {
+        // server: {
+        //        // middleware: [proxy(proxyOptions)],
+        //        // Serve up our build folder
+        //        baseDir: dest
+        //    },
+        proxy: "localhost:3000",
+        open: false,
+        port: 3001,
+        files: ['public/**/*']
+    },
     nodemon: {
         options: {
             "verbose": true,
             script: './bin/dev',
             ignore: [".git", 'public', 'ui', 'node_modules', 'gulp']
         }
+    },
+    open: {
+        url: 'http://localhost:3001'
     },
     less: {
         src: app + "/styles/app.less",
@@ -26,12 +46,6 @@ module.exports = {
     images: {
         src: app + "/images/**",
         dest: dest + "/images"
-    },
-    vendor: {
-        src: [
-            node_modules + '/modernizr/dist/modernizr-build.js'
-        ],
-        dest: dest + '/js/vendor'
     },
     fonts: {
         src: [
