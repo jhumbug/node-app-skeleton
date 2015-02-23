@@ -10,7 +10,7 @@ gulp.task('nodemon', function(cb) {
     var called = false;
     return nodemon(config.nodemon.options)
         .on('change',  function onChange() {
-            console.log('change');
+            //console.log('change');
         })
         .on('start', function onStart() {
             if (!called) {
@@ -27,9 +27,8 @@ gulp.task('nodemon', function(cb) {
 
             }
             called = true;
-            console.log('started');
         })
         .on('restart', function onRestart() {
-            console.log('restart');
+            //console.log('restart');
         });
 })
